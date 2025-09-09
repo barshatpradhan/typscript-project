@@ -1,8 +1,8 @@
 // Code Tidy
-
 import { showReviewTotal, populateUser, showDetails, getTopTwoReviews} from './utils'
 import {UserPermissions , LoyaltyUser } from './enums'
 import { Review, Property } from './interface'
+document.addEventListener("DOMContentLoaded", () => {
 const propertyContainer = document.querySelector('.properties') as HTMLElement
 const reviewContainer = document.querySelector('.reviews') as HTMLElement
 const container = document.querySelector('.container') as HTMLElement
@@ -106,6 +106,7 @@ populateUser(you.isReturning, you.firstName)
 // Add the properties
 for (let i = 0; i < properties.length; i++) {
     const card = document.createElement('div')
+    console.log(card)
     card.classList.add('card')
     card.innerHTML = properties[i].title
     const image = document.createElement('img')
@@ -113,6 +114,7 @@ for (let i = 0; i < properties.length; i++) {
     card.appendChild(image)
     showDetails(you.permissions, card, properties[i].price)
     propertyContainer.appendChild(card)
+    console.log(card)
 }
 
 let count = 0
@@ -161,3 +163,4 @@ const mainImageContainer = document.querySelector('.main-image') as HTMLElement
 const image = document.createElement('img')
 image.setAttribute('src', yourMainProperty.src)
 mainImageContainer.appendChild(image)
+});
