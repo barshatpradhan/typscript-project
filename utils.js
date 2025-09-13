@@ -8,9 +8,9 @@ exports.getTopTwoReviews = getTopTwoReviews;
 var reviewTotalDisplay = document.querySelector('#reviews');
 var returningUserDisplay = document.querySelector('#returning-user');
 var userNameDisplay = document.querySelector('#user');
-var enums_1 = require("./enums");
+var enums_js_1 = require("./enums.js");
 function showReviewTotal(value, reviewer, isLoyalty) {
-    var iconDisplay = enums_1.LoyaltyUser.GOLD_USER ? '⭐' : '';
+    var iconDisplay = enums_js_1.LoyaltyUser.GOLD_USER ? '⭐' : '';
     reviewTotalDisplay.innerHTML = value.toString() + ' review' + makeMultiple(value) + ' | last reviewed by ' + reviewer + ' ' + iconDisplay;
 }
 function populateUser(isReturning, userName) {

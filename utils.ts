@@ -1,8 +1,8 @@
-const reviewTotalDisplay = document.querySelector('#reviews') as HTMLElement
-const returningUserDisplay = document.querySelector('#returning-user') as HTMLElement
-const userNameDisplay = document.querySelector('#user') as HTMLElement
-import { LoyaltyUser, UserPermissions } from './enums'
-import { Review }  from './interface'
+const reviewTotalDisplay = document.querySelector('#reviews') 
+const returningUserDisplay = document.querySelector('#returning-user') 
+const userNameDisplay = document.querySelector('#user') 
+import { LoyaltyUser, UserPermissions } from './enums.js'
+import { Review }  from './interface.js'
 
 export function showReviewTotal(value: number, reviewer: string, isLoyalty: LoyaltyUser) {
     const iconDisplay = LoyaltyUser.GOLD_USER ? '⭐' : ''

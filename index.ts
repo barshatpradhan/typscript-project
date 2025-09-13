@@ -1,13 +1,12 @@
-// Code Tidy
-import { showReviewTotal, populateUser, showDetails, getTopTwoReviews} from './utils'
-import {UserPermissions , LoyaltyUser } from './enums'
-import { Review, Property } from './interface'
+import { showReviewTotal, populateUser, showDetails, getTopTwoReviews } from "./utils.js";
+import { LoyaltyUser, UserPermissions } from "./enums.js";
+import { Review, Property } from './interface.js'
 document.addEventListener("DOMContentLoaded", () => {
-const propertyContainer = document.querySelector('.properties') as HTMLElement
-const reviewContainer = document.querySelector('.reviews') as HTMLElement
-const container = document.querySelector('.container') as HTMLElement
-const button = document.querySelector('button') as HTMLElement
-const footer = document.querySelector('.footer') as HTMLElement
+const propertyContainer = document.querySelector('.properties') 
+const reviewContainer = document.querySelector('.reviews') 
+const container = document.querySelector('.container') 
+const button = document.querySelector('button') 
+const footer = document.querySelector('.footer') 
 
 let isLoggedIn: boolean
 
@@ -159,7 +158,7 @@ let yourMainProperty = new MainProperty(
         date: '12-04-2021'
     }] )
 
-const mainImageContainer = document.querySelector('.main-image') as HTMLElement
+const mainImageContainer = document.querySelector('.main-image') 
 const image = document.createElement('img')
 image.setAttribute('src', yourMainProperty.src)
 mainImageContainer.appendChild(image)

@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// Code Tidy
-var utils_1 = require("./utils");
-var enums_1 = require("./enums");
+var utils_js_1 = require("./utils.js");
+var enums_js_1 = require("./enums.js");
 document.addEventListener("DOMContentLoaded", function () {
     var propertyContainer = document.querySelector('.properties');
     var reviewContainer = document.querySelector('.reviews');
@@ -15,26 +14,26 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             name: 'Sheila',
             stars: 5,
-            loyaltyUser: enums_1.LoyaltyUser.GOLD_USER,
+            loyaltyUser: enums_js_1.LoyaltyUser.GOLD_USER,
             date: '01-04-2021'
         },
         {
             name: 'Andrzej',
             stars: 3,
-            loyaltyUser: enums_1.LoyaltyUser.BRONZE_USER,
+            loyaltyUser: enums_js_1.LoyaltyUser.BRONZE_USER,
             date: '28-03-2021'
         },
         {
             name: 'Omar',
             stars: 4,
-            loyaltyUser: enums_1.LoyaltyUser.SILVER_USER,
+            loyaltyUser: enums_js_1.LoyaltyUser.SILVER_USER,
             date: '27-03-2021',
         },
     ];
     var you = {
         firstName: 'Bobby',
         lastName: 'Brown',
-        permissions: enums_1.UserPermissions.ADMIN,
+        permissions: enums_js_1.UserPermissions.ADMIN,
         isReturning: true,
         age: 35,
         stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
@@ -95,8 +94,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     ];
     // Functions
-    (0, utils_1.showReviewTotal)(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
-    (0, utils_1.populateUser)(you.isReturning, you.firstName);
+    (0, utils_js_1.showReviewTotal)(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
+    (0, utils_js_1.populateUser)(you.isReturning, you.firstName);
     // Add the properties
     for (var i = 0; i < properties.length; i++) {
         var card = document.createElement('div');
@@ -106,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var image_1 = document.createElement('img');
         image_1.setAttribute('src', properties[i].image);
         card.appendChild(image_1);
-        (0, utils_1.showDetails)(you.permissions, card, properties[i].price);
+        (0, utils_js_1.showDetails)(you.permissions, card, properties[i].price);
         propertyContainer.appendChild(card);
         console.log(card);
     }
@@ -114,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function addReviews(array) {
         if (!count) {
             count++;
-            var topTwo = (0, utils_1.getTopTwoReviews)(array);
+            var topTwo = (0, utils_js_1.getTopTwoReviews)(array);
             for (var i = 0; i < topTwo.length; i++) {
                 var card = document.createElement('div');
                 card.classList.add('review-card');
@@ -139,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var yourMainProperty = new MainProperty('images/italian-property.jpg', 'Italian House', [{
             name: 'Olive',
             stars: 5,
-            loyaltyUser: enums_1.LoyaltyUser.GOLD_USER,
+            loyaltyUser: enums_js_1.LoyaltyUser.GOLD_USER,
             date: '12-04-2021'
         }]);
     var mainImageContainer = document.querySelector('.main-image');
